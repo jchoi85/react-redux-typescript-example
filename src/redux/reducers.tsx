@@ -9,6 +9,7 @@ export type All = {
 
 const counterState: Counter = { numCounter: 0 }; // initial state
 
+// define what to do on action dispatch
 function counter(state: Counter = counterState, action: Action): Counter {
     let { numCounter } = state;
 	switch (action.type) {
@@ -27,6 +28,7 @@ function counter(state: Counter = counterState, action: Action): Counter {
 	}
 }
 
+// combine reducers (only necessary if more than one reducer is used)
 export const reducers = combineReducers<All>({
 	counter
 });

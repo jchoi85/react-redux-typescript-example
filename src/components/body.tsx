@@ -6,17 +6,17 @@ import * as redux from "redux";
 import { connect } from "react-redux";
 import { decrementCounter, incrementCounter, resetCounter } from "../redux/actions";
 
-interface IOwnProps { }
+interface IOwnProps { } // if props need to be passed
 
-type ConnectedState = {
+type ConnectedState = { // define the state variables you want to subscribe to
   counter: reducers.Counter,
 }
 
-const mapStateToProps = (state: reducers.All, ownProps: IOwnProps): ConnectedState => ({
+const mapStateToProps = (state: reducers.All, ownProps: IOwnProps): ConnectedState => ({ 
   counter: state.counter
 })
 
-type ConnectedDispatch = {
+type ConnectedDispatch = { // define which dispatch actions
   incrementCounter: (incCounter: number) => void;
   decrementCounter: (decCounter: number) => void;
   resetCounter: () => void;
@@ -61,10 +61,10 @@ class Body extends React.Component<ConnectedState & ConnectedDispatch & IOwnProp
         </div>
         <div className="row" style={{ paddingTop: "30px" }}>
           Increment value:&nbsp;
-          <input value={this.state.increment} onChange={this.onChange} style={{textAlign: "right"}}/>
+          <input value={this.state.increment} onChange={this.onChange} style={{ textAlign: "right" }} />
         </div>
         <div className="row" style={{ paddingTop: "30px" }}>
-        <button className="btn" onClick={this.resetCounter}>Reset</button>
+          <button className="btn" onClick={this.resetCounter}>Reset</button>
         </div>
       </div>
     );
@@ -82,11 +82,11 @@ class Body extends React.Component<ConnectedState & ConnectedDispatch & IOwnProp
     this.props.resetCounter();
   }
 
-  private onChange(e: React.ChangeEvent<HTMLInputElement>){
+  private onChange(e: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
       increment: e.target.value
     })
   }
 }
 
-export const WrappedBody = connect(mapStateToProps, mapDispatchToProps)(Body);
+export const WrappedBody = connect(mapStateToProps, mapDispatchToProps)(Body); // wrap component

@@ -5,9 +5,9 @@ import logo from '../logo.svg';
 import { connect } from "react-redux";
 import * as reducers from "../redux/reducers";
 
-interface IOwnProps {}
+interface IOwnProps {} // if props need to be passed
 
-interface IConnectedState {
+interface IConnectedState { // define the state variables you want to subscribe to
     counter: reducers.Counter,
 }
 
@@ -28,4 +28,4 @@ class Header extends React.Component<IConnectedState & IOwnProps, IHeaderState> 
   }
 }
 
-export const WrappedHeader = connect(mapStateToProps)(Header);
+export const WrappedHeader = connect(mapStateToProps)(Header); // wrap components

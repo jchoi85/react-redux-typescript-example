@@ -1,3 +1,4 @@
+// type safety for actions
 export type Action = {
 	type: 'INCREMENT_COUNTER',
 	incCounter: number
@@ -12,6 +13,7 @@ export type Action = {
     type: 'RESET_COUNTER'
 }
 
+// define actions
 export const decrementCounter = (decCounter: number): Action => ({
 	type: 'DECREMENT_COUNTER',
 	decCounter
