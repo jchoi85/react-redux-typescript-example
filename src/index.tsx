@@ -9,7 +9,6 @@ import * as redux from "redux";
 import { reducers } from "./redux/reducers";
 import * as state from "./redux/reducers";
 
-
 const store: redux.Store<state.All> = redux.createStore(
 	reducers,
 	{} as state.All
