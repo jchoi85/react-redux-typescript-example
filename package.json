@@ -26,5 +26,5 @@
     "gh-pages": "^1.1.0",
     "typescript": "^2.8.3"
   },
-  "homepage": "https://jchoi85.github.io/react-redux-typescript-example"
+  "homepage": "http://jchoi85.github.io/react-redux-typescript-example"
 }
